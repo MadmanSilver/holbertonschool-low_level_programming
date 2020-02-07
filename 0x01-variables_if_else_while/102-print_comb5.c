@@ -11,6 +11,7 @@ int main(void)
 	int c2;
 	int c3;
 	int c4;
+	int minc;
 
 	for (c1 = '0'; c1 <= '9'; c1++)
 	{
@@ -18,7 +19,11 @@ int main(void)
 		{
 			for (c3 = c1; c3 <= '9'; c3++)
 			{
-				for (c4 = c2; c4 <= '9'; c4++)
+				if (c3 <= c1)
+					minc = c2;
+				else
+					minc = '0';
+				for (c4 = minc; c4 <= '9'; c4++)
 				{
 					if (c1 != c3 || c2 != c4)
 					{
@@ -27,11 +32,11 @@ int main(void)
 						putchar(' ');
 						putchar(c3);
 						putchar(c4);
-						if (c1 != '9' || c2 != '8' || c3 != '9' || c4 != '9')
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					}
+					if (c1 != '9' || c2 != '8' || c3 != '9' || c4 != '9')
+					{
+						putchar(',');
+						putchar(' ');
 					}
 				}
 			}
