@@ -25,7 +25,7 @@ int main(void)
 					minc = '0';
 				for (c4 = minc; c4 <= '9'; c4++)
 				{
-					if (c1 != c3 || c2 != c4)
+					if ((c1 < c3) || ((c2 < c4) && (c1 == c3)))
 					{
 						putchar(c1);
 						putchar(c2);
@@ -33,7 +33,7 @@ int main(void)
 						putchar(c3);
 						putchar(c4);
 					}
-					if (c1 != '9' || c2 != '8' || c3 != '9' || c4 != '9')
+					if ((c1 != '9') || (c2 != '8'))
 					{
 						putchar(',');
 						putchar(' ');
