@@ -32,11 +32,11 @@ int main(void)
 						putchar(' ');
 						putchar(c3);
 						putchar(c4);
-					}
 					if ((c1 != '9') || (c2 != '8'))
 					{
 						putchar(',');
 						putchar(' ');
+					}
 					}
 				}
 			}
