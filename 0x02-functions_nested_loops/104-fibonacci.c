@@ -12,7 +12,7 @@ int main(void)
 	float new, i;
 
 	printf("%.0f, %.0f", pre1, pre2);
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < 97; i++)
 	{
 		new = pre1 + pre2;
 		pre1 = pre2;
