@@ -10,6 +10,8 @@ void print_to_98(int n)
 
 	for (i = n; i > 97; i--)
 	{
+		if (n == 98)
+			break;
 		if (i != n)
 			printf(", ");
 		printf("%d", i);
