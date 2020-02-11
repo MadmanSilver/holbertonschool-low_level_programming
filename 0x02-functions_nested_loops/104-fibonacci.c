@@ -7,18 +7,28 @@
  */
 int main(void)
 {
-	float pre1 = 1;
-	float pre2 = 2;
-	float new;
+	unsigned long pre1a = 0;
+	unsigned long pre1b = 1;
+	unsigned long pre2a = 0;
+	unsigned long pre2b = 2;
+	unsigned long new1, new2;
 	int i;
 
-	printf("%.0f, %.0f", pre1, pre2);
+	printf("%.0lu, %.0lu", pre1b, pre2b);
 	for (i = 0; i < 96; i++)
 	{
-		new = pre1 + pre2;
-		pre1 = pre2;
-		pre2 = new;
-		printf(", %.0f", new);
+		new1 = pre1a + pre2a;
+		new2 = pre1b + pre2b;
+		if (new2 >= 1000000)
+		{
+			new1 += new2 / 1000000;
+			new2 = new2 % 1000000;
+		}
+		pre1a = pre2a;
+		pre1b = pre2b;
+		pre2a = new1;
+		pre2b = new2;
+		printf(", %.0lu%.0lu", new1, new2);
 	}
 	printf("\n");
 	return (0);
