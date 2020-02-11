@@ -14,7 +14,7 @@ int main(void)
 	unsigned long new1, new2;
 	int i;
 
-	printf("%.0lu, %.0lu", pre1b, pre2b);
+	printf("%lu, %lu", pre1b, pre2b);
 	for (i = 0; i < 96; i++)
 	{
 		new1 = pre1a + pre2a;
@@ -28,7 +28,10 @@ int main(void)
 		pre1b = pre2b;
 		pre2a = new1;
 		pre2b = new2;
-		printf(", %.0lu%.0lu", new1, new2);
+		printf(", ");
+		if (new1 != 0)
+			printf("%lu", new1);
+		printf("%lu", new2);
 	}
 	printf("\n");
 	return (0);
