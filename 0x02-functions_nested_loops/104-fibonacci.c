@@ -30,8 +30,13 @@ int main(void)
 		pre2b = new2;
 		printf(", ");
 		if (new1 != 0)
-			printf("%lu", new1);
-		printf("%lu", new2);
+		{
+			printf("%lu%06lu", new1, new2);
+		}
+		else
+		{
+			printf("%lu", new2);
+		}
 	}
 	printf("\n");
 	return (0);
