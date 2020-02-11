@@ -9,7 +9,8 @@ int main(void)
 {
 	float pre1 = 1;
 	float pre2 = 2;
-	float new, i;
+	float new;
+	int i;
 
 	printf("%.0f, %.0f", pre1, pre2);
 	for (i = 0; i < 96; i++)
