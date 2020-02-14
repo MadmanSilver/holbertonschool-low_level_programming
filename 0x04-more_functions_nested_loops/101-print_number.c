@@ -24,7 +24,8 @@ void print_number(int n)
 		digits++;
 	}
 	pos = tmp;
-	if (pos % 10 > 3)
+	tmp = 0;
+	if (pos % 10 > 3 && digits == 10)
 	{
 		tmp = pos % 10;
 		pos -= pos % 10;
