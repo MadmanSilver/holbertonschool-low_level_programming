@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_number - Prints an integer
@@ -6,41 +7,44 @@
  */
 void print_number(int n)
 {
-	unsigned int i = 0;
-	unsigned int k = 0;
-	unsigned int b, j;
+	int digits = 0, i;
+	unsigned int pos = 0;
+	unsigned int tmp = 0;
+	unsigned int rev = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		j = n * -1;
-		b = j;
+		pos = -n;
 	}
 	else
-	{
-		j = n;
-		b = n;
-	}
+		pos = n;
+
+	tmp = pos;
 
 	if (n == 0)
 		_putchar('0');
 
-	while (j > 0)
+	while (pos > 0)
 	{
-		j = j / 10;
-		i++;
+		pos = pos / 10;
+		digits++;
 	}
 
-	for (j = 0; j < i; j++)
+	pos = tmp;
+
+	for (i = 0; i < digits; i++)
 	{
-		k *= 10;
-		k += b % 10;
-		b /= 10;
+		rev *= 10;
+		rev += pos % 10;
+		pos /= 10;
 	}
 
-	for (j = 0; j < i; j++)
+	/*printf("Digits: %d, Pos: %u, Rev: %u\n", digits, pos, rev);*/
+
+	for (i = 0; i < digits; i++)
 	{
-		_putchar('0' + k % 10);
-		k /= 10;
+		_putchar('0' + rev % 10);
+		rev /= 10;
 	}
 }
