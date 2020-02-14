@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned long n = 22440;
+	unsigned long n = 612852475143;
 	unsigned long cFact;
 
 	for (cFact = 2; cFact < sqrt(n); cFact++)
