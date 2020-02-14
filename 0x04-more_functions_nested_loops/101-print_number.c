@@ -6,13 +6,20 @@
  */
 void print_number(int n)
 {
-	int i = 0, j = n, k = 0;
+	unsigned int i = 0;
+	unsigned int k = 0;
+	unsigned int b, j;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		j = n * -1;
-		n = j;
+		b = j;
+	}
+	else
+	{
+		j = n;
+		b = n;
 	}
 
 	if (n == 0)
@@ -27,8 +34,8 @@ void print_number(int n)
 	for (j = 0; j < i; j++)
 	{
 		k *= 10;
-		k += n % 10;
-		n /= 10;
+		k += b % 10;
+		b /= 10;
 	}
 
 	for (j = 0; j < i; j++)
