@@ -6,7 +6,12 @@
  */
 void rev_string(char *s)
 {
-	char str = *s;
+	int i, c = sizeof(s);
+	char str[sizeof(s) + 1];
 
-	for (
+	for (i = 0; i <= c; i++)
+		str[i] = s[i];
+
+	for (i = 0; i <= c; i++)
+		s[i] = str[c - i];
 }
