@@ -39,5 +39,8 @@ int _atoi(char *s)
 		}
 	}
 
+	if (num == 0)
+		return (0);
+
 	return (num * sign);
 }
