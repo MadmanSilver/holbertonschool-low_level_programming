@@ -7,7 +7,7 @@
 void rev_string(char *s)
 {
 	int i, c = 0;
-	char str[90];
+	char str[2048];
 
 	while (s[c] != '\0')
 		c++;
