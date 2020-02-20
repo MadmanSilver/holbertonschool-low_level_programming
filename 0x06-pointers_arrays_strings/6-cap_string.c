@@ -21,7 +21,7 @@ char *cap_string(char *s)
 			{
 				s[i] = s[i] - 32;
 			}
-			else if (i = 0)
+			else if (i == 0)
 			{
 				s[i] = s[i] - 32;
 			}
