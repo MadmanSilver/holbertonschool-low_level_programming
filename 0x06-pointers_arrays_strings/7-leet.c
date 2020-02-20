@@ -13,7 +13,9 @@ char *leet(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; s[i] == 'a' || s[i] == 'A' || s[i] == 'e' || s[i] == 'E' || s[i] == 'o' || s[i] == 'O' || s[i] == 't' || s[i] == 'T' || s[i] == 'l' || s[i] == 'L'; j++)
+		for (j = 0; s[i] == 'a' || s[i] == 'A' || s[i] == 'e' || s[i] == 'E' ||
+		 s[i] == 'o' || s[i] == 'O' || s[i] == 't' || s[i] == 'T' || s[i] == 'l' ||
+		 s[i] == 'L'; j++)
 		{
 			if (s[i] == c[j] || s[i] - 32 == c[j])
 				s[i] = '0' + j;
