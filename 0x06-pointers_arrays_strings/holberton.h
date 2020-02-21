@@ -11,5 +11,9 @@ char *cap_string(char *);
 char *leet(char *);
 char *rot13(char *);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
+void shiftR(char *s, int c);
+int count(char *s);
+char *carryTheOne(char *r, int j, int size_r);
+int _putchar(char c);
 
 #endif
