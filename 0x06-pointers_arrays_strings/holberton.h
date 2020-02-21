@@ -16,5 +16,6 @@ int count(char *s);
 char *carryTheOne(char *r, int j, int size_r);
 int _putchar(char c);
 void print_number(int n);
+void print_buffer(char *b, int size);
 
 #endif
