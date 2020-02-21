@@ -15,5 +15,6 @@ void shiftR(char *s, int c);
 int count(char *s);
 char *carryTheOne(char *r, int j, int size_r);
 int _putchar(char c);
+void print_number(int n);
 
 #endif
