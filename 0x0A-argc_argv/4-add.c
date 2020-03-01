@@ -9,7 +9,7 @@
  *
  * Return: 1 if error, 0 otherwise
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i, k;
 	int total = 0;
