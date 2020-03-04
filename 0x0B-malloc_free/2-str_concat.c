@@ -10,7 +10,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, len, len2;
+	unsigned int i, len = 0, len2 = 0;
 	char *p;
 
 	if (s1 == NULL)
@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 	while (s2[len2])
 		len2++;
 
-	p = malloc(sizeof(char) * (len + len2));
+	p = malloc(sizeof(char) * (len + len2 - 1));
 
 	if (p == NULL)
 		return (NULL);
@@ -38,6 +38,6 @@ char *str_concat(char *s1, char *s2)
 		p[i + len] = s2[i];
 	}
 
-	p[i + len] = '\0';
+	p[len + len2] = '\0';
 	return (p);
 }
