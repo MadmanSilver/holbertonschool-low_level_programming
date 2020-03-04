@@ -18,8 +18,7 @@ char *_strdup(char *str)
 	while (str[len])
 		len++;
 
-	if (str[0] == '\0')
-		len++;
+	len++;
 
 	p = malloc(sizeof(char) * len);
 
@@ -30,6 +29,8 @@ char *_strdup(char *str)
 	{
 		p[i] = str[i];
 	}
+
+	p[i] = '\0';
 
 	return (p);
 }
