@@ -18,11 +18,20 @@ char *argstostr(int ac, char **av)
 
 	p = str_concat(av[0], "");
 
+	if (p == NULL)
+		return (NULL);
+
 	p = str_concat(p, av[1]);
+
+	if (p == NULL)
+		return (NULL);
 
 	for (i = 2; i < ac; i++)
 	{
 		p = str_concat(p, av[i]);
+
+		if (p == NULL)
+			return (NULL);
 	}
 
 	return (p);
