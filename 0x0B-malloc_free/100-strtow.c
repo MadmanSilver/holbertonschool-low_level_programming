@@ -46,7 +46,7 @@ char **strtow(char *str)
 		if (p[i] == NULL)
 			return (NULL);
 
-		for (j = 0; str[k] != ' '; j++, k++)
+		for (j = 0; str[k] != ' ' && str[k] != '\0'; j++, k++)
 			p[i][j] = str[k];
 
 		p[i][j] = '\0';
