@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * strtow - splits a string into an array of words
@@ -20,8 +21,6 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			nw++;
-		if ((str[i] < 'a' && str[i] > 'Z') || str[i] > 'z' || str[i] < 'A')
-			return (NULL);
 	}
 
 	if (nw == 0)
@@ -53,7 +52,7 @@ char **strtow(char *str)
 		p[i][j] = '\0';
 	}
 
-	p[i] = NULL;
+	p[nw] = NULL;
 
 	return (p);
 }
