@@ -16,9 +16,10 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
+
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			nw++;
 	}
 
