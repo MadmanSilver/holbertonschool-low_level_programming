@@ -28,7 +28,10 @@ char **strtow(char *str)
 	p = malloc(sizeof(char *) * (nw + 1));
 
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 
 	for (i = 0; i < nw; i++)
 	{
@@ -43,7 +46,12 @@ char **strtow(char *str)
 		p[i] = malloc(sizeof(char) * (j + 1));
 
 		if (p[i] == NULL)
+		{
+			for (j = 0; j <= i; j++)
+				free(p[j]);
+			free(p);
 			return (NULL);
+		}
 
 		for (j = 0; str[k] != ' '; j++, k++)
 			p[i][j] = str[k];
