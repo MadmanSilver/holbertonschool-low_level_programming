@@ -20,7 +20,12 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			nw++;
+		if ((str[i] < 'a' && str[i] > 'Z') || str[i] > 'z' || str[i] < 'A')
+			return (NULL);
 	}
+
+	if (nw == 0)
+		return (NULL);
 
 	p = malloc(sizeof(char *) * (nw + 1));
 
