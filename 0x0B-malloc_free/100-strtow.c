@@ -36,7 +36,7 @@ char **strtow(char *str)
 		while (str[k] == ' ')
 			k++;
 
-		for (j = 0; str[k] != ' '; k++)
+		for (j = 0; str[k] != ' ' && str[k] != '\0'; k++)
 			j++;
 
 		k -= j;
