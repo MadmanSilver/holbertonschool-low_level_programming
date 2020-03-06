@@ -11,6 +11,8 @@
 int main(int argc, char **argv)
 {
 	char *p;
+	char *s1;
+	char *s2;
 
 	if (argc != 3)
 		error();
@@ -18,14 +20,50 @@ int main(int argc, char **argv)
 	if (!(check(argv[1])) || !(check(argv[2])))
 		error();
 
-	if (count(argv[1]) > count(argv[2]))
-		p = inf_mul(argv[1], argv[2]);
-	else
-		p = inf_mul(argv[2], argv[1]);
+	s1 = reduce(argv[1]);
+	s2 = reduce(argv[2]);
 
+	if (count(s1) > count(s2))
+		p = inf_mul(s1, s2);
+	else
+		p = inf_mul(s2, s1);
+
+	free(s1);
+	free(s2);
 	_puts(p);
 	free(p);
 	return (0);
+}
+
+/**
+ * reduce - removes leading zeros
+ * @s: string to reduce
+ *
+ * Return: pointer to new string
+ */
+char *reduce(char *s)
+{
+	int i;
+	int c = 0;
+	char *p;
+
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] == '0' && s[i + 1] != '\0')
+		{
+			c++;
+		}
+	}
+
+	p = malloc(sizeof(char) * (i - c + 1));
+	p[i - c] = '\0';
+
+	for (i -= 1; i - c >= 0; i--)
+	{
+		p[i - c] = s[i];
+	}
+
+	return (p);
 }
 
 /**

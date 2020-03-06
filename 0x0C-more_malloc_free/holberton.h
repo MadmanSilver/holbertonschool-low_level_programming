@@ -19,5 +19,6 @@ int _strcmp(char *s1, char *s2);
 char *cmul(char c1, char c2);
 char *place(char *s, int zeros);
 void *checked_malloc(int size, char *n1, char *n2);
+char *reduce(char *s);
 
 #endif
