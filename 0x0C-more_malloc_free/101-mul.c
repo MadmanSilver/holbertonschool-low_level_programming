@@ -83,7 +83,12 @@ char *inf_mul(char *s1, char *s2)
 		p = malloc(sizeof(char) * 2);
 
 		if (p == NULL)
+		{
+			if (m != NULL)
+				free(m);
+			free(p2);
 			error();
+		}
 
 		p[0] = '0';
 		p[1] = '\0';
@@ -92,12 +97,10 @@ char *inf_mul(char *s1, char *s2)
 		{
 			m = place(cmul(s1[i], s2[j]), ((c2 - 1) - j) + ((c1 - 1) - i));
 			p = inf_add(p, m);
-			/*free(m);*/
 		}
 
 		p2 = inf_add(p2, p);
 	}
-	/*free(p);*/
 	return (p2);
 }
 
@@ -152,7 +155,10 @@ char *place(char *s, int zeros)
 	char *p = malloc(sizeof(char) * (c + zeros + 1));
 
 	if (p == NULL)
+	{
+		free(s);
 		error();
+	}
 
 	for (i = 0; i < c + zeros; i++)
 	{
@@ -210,7 +216,7 @@ char *inf_add(char *n1, char *n2)
 	else
 		size_r = c2 + 2;
 	j = size_r;
-	r = checked_malloc(sizeof(char) * size_r);
+	r = checked_malloc(sizeof(char) * size_r, n1, n2);
 	for (i = 0; i < j; i++)
 	{
 		if (c1 > c2)
@@ -246,15 +252,21 @@ char *inf_add(char *n1, char *n2)
 /**
  * checked_malloc - allocates and checks
  * @size: amount to allocate
+ * @n1: pointer to free
+ * @n2: pointer to free
  *
  * Return: pointer to allocated
  */
-void *checked_malloc(int size)
+void *checked_malloc(int size, char *n1, char *n2)
 {
 	void *p = malloc(size);
 
 	if (p == NULL)
+	{
+		free(n1);
+		free(n2);
 		error();
+	}
 	return (p);
 }
 
