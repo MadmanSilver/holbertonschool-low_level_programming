@@ -29,6 +29,9 @@ int main(int argc, char **argv)
 		p = inf_mul(s2, s1);
 
 	free(s1);
+	s1 = p;
+	p = reduce(p);
+	free(s1);
 	free(s2);
 	_puts(p);
 	free(p);
