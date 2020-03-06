@@ -72,12 +72,19 @@ char *inf_mul(char *s1, char *s2)
 	char *p;
 	char *p2 = malloc(sizeof(char) * 2);
 
+	if (p2 == NULL)
+		error();
+
 	p2[0] = '0';
 	p2[1] = '\0';
 
 	for (i = c1 - 1; i >= 0; i--)
 	{
 		p = malloc(sizeof(char) * 2);
+
+		if (p == NULL)
+			error();
+
 		p[0] = '0';
 		p[1] = '\0';
 
@@ -85,12 +92,12 @@ char *inf_mul(char *s1, char *s2)
 		{
 			m = place(cmul(s1[i], s2[j]), ((c2 - 1) - j) + ((c1 - 1) - i));
 			p = inf_add(p, m);
-			free(m);
+			/*free(m);*/
 		}
 
 		p2 = inf_add(p2, p);
 	}
-
+	/*free(p);*/
 	return (p2);
 }
 
@@ -109,12 +116,20 @@ char *cmul(char c1, char c2)
 	if (n / 10 == 0)
 	{
 		p = malloc(sizeof(char) * 2);
+
+		if (p == NULL)
+			error();
+
 		p[0] = n + '0';
 		p[1] = '\0';
 	}
 	else
 	{
 		p = malloc(sizeof(char) * 3);
+
+		if (p == NULL)
+			error();
+
 		p[0] = (n / 10) + '0';
 		p[1] = (n % 10) + '0';
 		p[2] = '\0';
@@ -135,6 +150,9 @@ char *place(char *s, int zeros)
 	int i;
 	int c = count(s);
 	char *p = malloc(sizeof(char) * (c + zeros + 1));
+
+	if (p == NULL)
+		error();
 
 	for (i = 0; i < c + zeros; i++)
 	{
@@ -222,6 +240,8 @@ char *inf_add(char *n1, char *n2)
 		}
 		r[i] = add + '0';
 	}
+	free(n1);
+	free(n2);
 	return (carryTheOne(r, j, size_r));
 }
 
