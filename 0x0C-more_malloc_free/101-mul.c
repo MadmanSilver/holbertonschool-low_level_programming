@@ -210,9 +210,7 @@ char *inf_add(char *n1, char *n2)
 	else
 		size_r = c2 + 2;
 	j = size_r;
-	r = malloc(sizeof(char) * size_r);
-	if (r == NULL)
-		error();
+	r = checked_malloc(sizeof(char) * size_r);
 	for (i = 0; i < j; i++)
 	{
 		if (c1 > c2)
@@ -243,6 +241,21 @@ char *inf_add(char *n1, char *n2)
 	free(n1);
 	free(n2);
 	return (carryTheOne(r, j, size_r));
+}
+
+/**
+ * checked_malloc - allocates and checks
+ * @size: amount to allocate
+ *
+ * Return: pointer to allocated
+ */
+void *checked_malloc(int size)
+{
+	void *p = malloc(size);
+
+	if (p == NULL)
+		error();
+	return (p);
 }
 
 /**
