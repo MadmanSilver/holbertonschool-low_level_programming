@@ -20,5 +20,8 @@ void print_dog(struct dog *d)
 	if (o == NULL)
 		o = "(nil)";
 
-	printf("Name: %s\nAge: %f\nOwner: %s\n", n, a, o);
+	if (a != 0)
+		printf("Name: %s\nAge: %f\nOwner: %s\n", n, a, o);
+	else
+		printf("Name: %s\nAge: (nil)\nOwner: %s\n", n, o);
 }
