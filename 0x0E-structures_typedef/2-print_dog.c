@@ -7,9 +7,9 @@
  */
 void print_dog(struct dog *d)
 {
-	char *n = d -> name;
-	float a = d -> age;
-	char *o = d -> owner;
+	char *n = d->name;
+	float a = d->age;
+	char *o = d->owner;
 
 	if (d == NULL)
 		return;
