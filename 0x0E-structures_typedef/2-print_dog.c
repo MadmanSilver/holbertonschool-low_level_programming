@@ -14,8 +14,8 @@ void print_dog(struct dog *d)
 	if (d == NULL)
 		return;
 
-	if (o == NULL)
-		o = "(nil)";
+	if (n == NULL)
+		n = "(nil)";
 
 	if (o == NULL)
 		o = "(nil)";
