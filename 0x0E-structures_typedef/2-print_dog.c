@@ -7,12 +7,16 @@
  */
 void print_dog(struct dog *d)
 {
-	char *n = d->name;
-	float a = d->age;
-	char *o = d->owner;
+	char *n;
+	float a;
+	char *o;
 
 	if (d == NULL)
 		return;
+
+	n = d->name;
+	a = d->age;
+	o = d->owner;
 
 	if (n == NULL)
 		n = "(nil)";
@@ -20,8 +24,5 @@ void print_dog(struct dog *d)
 	if (o == NULL)
 		o = "(nil)";
 
-	if (a != 0)
-		printf("Name: %s\nAge: %f\nOwner: %s\n", n, a, o);
-	else
-		printf("Name: %s\nAge: (nil)\nOwner: %s\n", n, o);
+	printf("Name: %s\nAge: %f\nOwner: %s\n", n, a, o);
 }
