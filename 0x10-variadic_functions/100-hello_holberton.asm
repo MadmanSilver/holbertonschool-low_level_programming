@@ -12,4 +12,4 @@ main:
 	syscall
 
 section .data
-	text db "Hello, Holberton",10,13
+	text db "Hello, Holberton",13,10
