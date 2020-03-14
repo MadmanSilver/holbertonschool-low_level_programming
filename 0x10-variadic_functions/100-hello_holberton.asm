@@ -1,14 +1,15 @@
 global main
 
 main:
-	mov edx,18
-	mov ecx,text
-	mov ebx,1
-	mov eax,4
-	int 0x80
+	mov rdx,18
+	mov rsi,text
+	mov rdi,1
+	mov rax,1
+	syscall
 
-	mov eax,1 
-	int 0x80
+	mov rdi,0
+	mov rax,3 
+	syscall
 
 section .data
 	text db "Hello, Holberton",13,10
