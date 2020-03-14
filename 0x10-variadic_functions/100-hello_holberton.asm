@@ -1,7 +1,7 @@
 global main
 
 main:
-	mov rdx,18
+	mov rdx,17
 	mov rsi,text
 	mov rdi,1
 	mov rax,1
@@ -12,4 +12,4 @@ main:
 	syscall
 
 section .data
-	text db "Hello, Holberton",13,10
+	text db "Hello, Holberton",10
