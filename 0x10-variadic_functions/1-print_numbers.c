@@ -3,7 +3,7 @@
 
 /**
  * print_numbers - prints numbers
- * @seperator: string to be printed between numbers
+ * @separator: string to be printed between numbers
  * @n: num of args
  * @...: list of args
  */
@@ -14,15 +14,18 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(args, n);
 
-	printf("%d", va_arg(args, int));
-	for (i = 1; i < n; i++)
+	if (n > 0)
 	{
-		if (separator == NULL)
-			printf("%d", va_arg(args, int));
-		else
-			printf("%s%d", separator, va_arg(args, int));
+		printf("%d", va_arg(args, int));
+		for (i = 1; i < n; i++)
+		{
+			if (separator == NULL)
+				printf("%d", va_arg(args, int));
+			else
+				printf("%s%d", separator, va_arg(args, int));
+		}
+		printf("\n");
 	}
-	printf("\n");
 
 	va_end(args);
 }
