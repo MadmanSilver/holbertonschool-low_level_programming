@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	char *s;
 	va_list args;
 
-	if (format != NULL)
+	if (format != NULL && format[i] != '\0')
 	{
 		while (format[count] != '\0')
 			count++;
