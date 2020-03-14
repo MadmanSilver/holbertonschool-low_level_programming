@@ -14,16 +14,14 @@ void print_all(const char * const format, ...)
 
 	if (format == NULL)
 		return;
-
 	while (format[count] != '\0')
 	{
 		count++;
-		if (format[count] != 'c' && format[count] != 'i' && format[count] != 'f' && format[count] != 's')
+		if (format[count] != 'c' && format[count] != 'i' &&
+			format[count] != 'f' && format[count] != 's')
 			sub++;
 	}
-
 	va_start(args, format);
-
 	while (i < count && count - sub > 0)
 	{
 		switch (format[i])
@@ -49,6 +47,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-
 	va_end(args);
 }
