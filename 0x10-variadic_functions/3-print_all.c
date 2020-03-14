@@ -12,9 +12,7 @@ void print_all(const char * const format, ...)
 	char *s;
 	va_list args;
 
-/*	if (format == NULL)
-		return;
-*/	while (format[count] != '\0')
+	while (format[count] != '\0')
 	{
 		count++;
 		if (format[count] != 'c' && format[count] != 'i' &&
@@ -22,7 +20,7 @@ void print_all(const char * const format, ...)
 			sub++;
 	}
 	va_start(args, format);
-	while (i < count && count - sub > 0)
+	while (i < count)
 	{
 		switch (format[i])
 		{
