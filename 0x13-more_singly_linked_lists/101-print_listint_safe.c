@@ -30,12 +30,9 @@ size_t print_listint_safe(const listint_t *head)
 			if (p == a[j] || p == head)
 			{
 				printf("-> [%p] %d\n", (void *)p, p->n);
-				break;
+				exit(98);
 			}
 		}
-
-		if (j != i)
-			break;
 
 		printf("[%p] %d\n", (void *)p, p->n);
 		a[i] = p;
