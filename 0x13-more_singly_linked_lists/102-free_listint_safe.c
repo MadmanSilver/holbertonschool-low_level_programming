@@ -19,6 +19,9 @@ size_t free_listint_safe(listint_t **h)
 	a = malloc(sizeof(listint_t *) * 1024);
 	p = *h;
 
+	if (a == NULL)
+		exit(98);
+
 	for (i = 0; p != NULL; i++)
 	{
 		for (j = 0; j < i; j++)
