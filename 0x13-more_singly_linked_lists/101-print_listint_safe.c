@@ -13,8 +13,8 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *p;
 	listint_t **a;
 
-	if (head == NULL || head->next == NULL)
-		exit(98);
+	if (head == NULL)
+		return (0);
 
 	a = malloc(sizeof(listint_t *) * 2024);
 	p = head->next;
