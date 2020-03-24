@@ -13,11 +13,14 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *p;
 	listint_t **a;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		exit(98);
 
 	a = malloc(sizeof(listint_t *) * 1024);
 	p = head->next;
+
+	if (a == NULL)
+		exit(98);
 
 	printf("[%p] %d\n", (void *)head, head->n);
 	for (i = 1; p != NULL; i++)
