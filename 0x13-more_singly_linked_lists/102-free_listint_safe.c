@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - frees all the elements of a listint_t list
- * @head: list to be freed
+ * @h: list to be freed
  *
  * Return: number of nodes
  */
