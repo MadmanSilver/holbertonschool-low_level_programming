@@ -23,9 +23,9 @@ size_t print_listint_safe(const listint_t *head)
 		exit(98);
 
 	printf("[%p] %d\n", (void *)head, head->n);
-	for (i = 0; p != NULL; i++)
+	for (i = 1; p != NULL; i++)
 	{
-		for (j = 0; j < i; j++)
+		for (j = 1; j < i; j++)
 		{
 			if (p == a[j] || p == head)
 			{
