@@ -22,11 +22,12 @@ size_t print_listint_safe(const listint_t *head)
 	if (a == NULL)
 		exit(98);
 
+	printf("[%p] %d\n", (void *)head, head->n);
 	if (head != head->next)
-		printf("[%p] %d\n", (void *)head, head->n);
+		a[0] = head->next;
 	for (i = 1; p != NULL; i++)
 	{
-		for (j = 1; j < i; j++)
+		for (j = 0; j < i; j++)
 		{
 			if (p == a[j] || p == head)
 			{

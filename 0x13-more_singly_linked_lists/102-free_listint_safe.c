@@ -14,13 +14,13 @@ size_t free_listint_safe(listint_t **h)
 	listint_t **a;
 
 	if (h == NULL)
-		exit(98);
+		return (0);
 
 	a = malloc(sizeof(listint_t *) * 1024);
 	p = *h;
 
 	if (a == NULL)
-		exit(98);
+		return (0);
 
 	for (i = 0; p != NULL; i++)
 	{
