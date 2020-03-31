@@ -22,6 +22,8 @@ int main(int argc, char **argv)
 	if (file_from == -1)
 		fail('r', file_to, file_from, argv[1]);
 	len = read(file_from, buff, 1024);
+	if (len == -1)
+		fail('r', file_to, file_from, argv[1]);
 	if (file_to == -1 || write(file_to, buff, len) == -1)
 		fail('w', file_to, file_from, argv[2]);
 	while (len == 1024)
