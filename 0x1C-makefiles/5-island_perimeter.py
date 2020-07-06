@@ -9,6 +9,9 @@ def island_perimeter(grid):
     perim = 2
     direction = 2
 
+    if not isinstance(grid, list):
+        return 0
+
     for y in range(len(grid)):
         for x in range(len(grid[0])):
             if grid[y][x]:
@@ -18,6 +21,9 @@ def island_perimeter(grid):
 
     if len(grid) <= 0 or len(grid[0]) <= 0:
         return 0
+
+    if len(grid) == 1 and len(grid[0]) == 1:
+        return 4
 
     if y + 1 == len(grid) and x + 1 == len(grid[0]):
         return 0
@@ -32,14 +38,8 @@ def island_perimeter(grid):
         perim += 1
         y += 1
         direction = 2
-    elif x - 1 >= 0 and grid[y][x - 1]:
-        perim += 2
-        x -= 1
-        direction = 3
     else:
-        perim += 3
-        y -= 1
-        direction = 0
+        return 4
 
     while x != prev_x or y != prev_y:
         if direction == 0:
