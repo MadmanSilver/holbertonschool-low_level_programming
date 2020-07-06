@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """ Imma measure an island! """
 
+
 def island_perimeter(grid):
     """ This mah brain! """
     y = 0
     x = 0
     perim = 2
-    direction = 2 # N = 0, E = 1, S = 2, W = 3
+    direction = 2
 
     for y in range(len(grid)):
         for x in range(len(grid[0])):
